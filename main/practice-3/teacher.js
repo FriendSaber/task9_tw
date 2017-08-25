@@ -29,12 +29,14 @@ module.exports = class Teacher extends Person {
             }
     }
 
+
     notifyLeaderAssigned(student){
+
         for(let value in this.clazzes){
             if(student.clazz.number == this.clazzes[value].number){
-                if(this.clazzes.leader !== ''){
+                if(this.clazzes[value].leader !== 0){
                     return "Jerry become Leader of Class "+student.clazz.number;
-                }
+                }else
                 return "Jerry has joined Class "+student.clazz.number;
             }
         }
